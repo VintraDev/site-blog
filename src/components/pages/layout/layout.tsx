@@ -1,5 +1,5 @@
-import { Header } from "../header";
-import { Footer } from "../footer";
+import { Header } from "../../shared/header";
+import { Footer } from "../../shared/footer";
 import { Inter } from "next/font/google"
 
 type LayoutProps = {
