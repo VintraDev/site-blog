@@ -1,5 +1,5 @@
 import { ArrowRight, Clock, Store } from "lucide-react";
-import { Button } from "../../../ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,13 +18,13 @@ export function HeroSection() {
                         <div>
                             <div className="flex items-center gap-4">
                                 <Clock className="text-cyan-100 h-4 w-4" />
-                                <span>
+                                <span className="text-body-md text-gray-200">
                                     Crie o seu site em menos de 5 minutos
                                 </span>
                             </div>
                             <div className="flex items-center gap-4">
                                 <Store className="text-cyan-100 h-4 w-4" />
-                                <span>
+                                <span className="text-body-md text-gray-200">
                                     Acompanhe e otimize seu negócio online
                                 </span>
                             </div>
@@ -48,6 +48,7 @@ export function HeroSection() {
                         src='/hero-section.svg'
                         alt="Ilustração com ícones de store, tag e sacola"
                         width={200}
+                        loading="eager"
                         height={400}
                         className="h-full w-auto object-contain"
                     />

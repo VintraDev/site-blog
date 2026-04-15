@@ -1,5 +1,5 @@
-import { Header } from "../../shared/header";
-import { Footer } from "../../shared/footer";
+import { Header } from "./header";
+import { Footer } from "./footer";
 import { Inter, PT_Sans_Caption } from "next/font/google"
 
 type LayoutProps = {
@@ -12,10 +12,10 @@ const ptSansCaption = PT_Sans_Caption({
     variable: '--font-sans'
 })
 
-const inter = Inter({ 
+const inter = Inter({
     subsets: ['latin'],
     weight: ['400', '500'],
-    variable: '--font-inter' 
+    variable: '--font-inter'
 })
 
 export function Layout({ children }: LayoutProps) {

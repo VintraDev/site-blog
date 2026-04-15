@@ -40,6 +40,7 @@ export function CustomerStoriesSection() {
                                         src={customerStories.author.avatar}
                                         alt={customerStories.author.name}
                                         fill
+                                        sizes="fill"
                                         className="object-cover"
                                     />
                                 </div>
