@@ -1,4 +1,4 @@
-import { CallToAction, CustomerStoriesSection, FeatureSection, HeroSection, SupportSection } from "@/components/templates/landing-page/sections";
+import { CallToAction, CustomerStoriesSection, FeatureSection, HeroSection, SupportSection } from "@/components/templates/landing-page/sections/Home";
 
 
 export function LandingPage() {

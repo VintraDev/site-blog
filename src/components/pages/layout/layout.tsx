@@ -22,7 +22,7 @@ export function Layout({ children }: LayoutProps) {
     return (
         <div className={`relative flex min-h-screen flex-col dark ${inter.className} ${ptSansCaption.className} font-inter`}>
             <Header />
-            <main className="flex-1 flex flex-col mt-10 mb-12">
+            <main className="flex-1 flex flex-col mt-10">
                 {children}
             </main>
             <Footer />
