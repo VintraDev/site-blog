@@ -1,6 +1,8 @@
 import { Search } from "@/components/ui/search";
 import { useRouter } from "next/router";
 import { PostCard } from "./components/post-card";
+import { PostGridCard } from "./components/post-grid-card";
+import { allPosts } from "contentlayer/generated";
 
 export function BlogList() {
 
@@ -8,9 +10,11 @@ export function BlogList() {
     const query = router.query.q as string;
     const pageTitle = query ? `Resultados de busca para "${query}"` : 'Dicas e estratégias para impulsionar seu negócio';
 
+    const posts = allPosts;
+
     return (
         <div className="flex flex-col py-24 grow h-full">
-            <header>
+            <header className="pb-14">
                 <div className="container space-y-6 flex flex-col items-start justify-between md:flex-row md:items-end">
                     <div className="flex flex-col gap-4">
                         {/* Tag */}
@@ -26,9 +30,26 @@ export function BlogList() {
                     <Search />
                 </div>
             </header>
-
-            <PostCard />
             {/* Listagem de posts */}
+            <PostGridCard>
+                {posts.map((post) => {
+                    return (
+                        <PostCard
+                            key={post._id}
+                            title={post.title}
+                            description={post.description}
+                            date={new Date(post.date).toLocaleDateString('pt-BR')}
+                            image={post.image}
+                            author={{
+                                avatar: post.author?.avatar,
+                                name: post.author?.name,
+                            }}
+                            slug={post.slug}
+                        />
+                    )
+                })}
+            </PostGridCard>
+
         </div>
     )
 }
