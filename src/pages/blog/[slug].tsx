@@ -54,7 +54,7 @@ export default function PostPage() {
                             </h1>
 
                             <Avatar.Container>
-                                <Avatar.Image src={post?.author.avatar} alt={post?.title} />
+                                <Avatar.Image src={post?.author.avatar} alt={post?.title} size="sm" />
                                 <Avatar.Content>
                                     <Avatar.Title>
                                         {post?.author.name}
@@ -66,10 +66,6 @@ export default function PostPage() {
                                 </Avatar.Content>
                             </Avatar.Container>
                         </header>
-
-                        <div className="prose prose-invert max-w-none px-4 mt-12 md:px-6 lg:px-12">
-                            <Markdown content={post.body.raw} />
-                        </div>
                     </article>
                 </div>
             </div>
