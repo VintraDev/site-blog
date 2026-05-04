@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Avatar } from "@/components/shared/avatar";
 import { Markdown } from "@/components/markdown";
+import { Button } from "@/components/ui/button";
 
 export default function PostPage() {
     const router = useRouter();
@@ -66,7 +67,30 @@ export default function PostPage() {
                                 </Avatar.Content>
                             </Avatar.Container>
                         </header>
+
+                        <div className="prose prose-invert max-w-none px-4 mt-12 md:px-6 lg:px-12">
+                            <Markdown content={post.body.raw} />
+                        </div>
                     </article>
+
+                    <aside className="space-y-6">
+                        <div className="rounded-lg bg-gray-700 p-4 md:p-6">
+                            <h2 className="mb-4 text-heading-xs text-gray-100">
+                                Compartilhar
+                            </h2>
+                            <div className="space-y-3">
+                                {[{ key: '1', providerName: 'LinkedIn' }, { key: '2', providerName: 'Facebook' }].map((provider) => (
+                                    <Button
+                                        variant="outline"
+                                        key={provider.key}
+                                        className="w-full justify-start gap-2"
+                                    >
+                                        {provider.providerName}
+                                    </Button>
+                                ))}
+                            </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
         </main>
